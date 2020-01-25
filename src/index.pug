@@ -28,35 +28,101 @@ html(lang="en")
                   each item in icons
                     li.socials__item
                       a.socials__link(href="#")
-                        +icon(item, "socials__icon")
+                        +icon(item, "socials__"+item)
             .hero__content
               .user-info
-                .user-info__desc Личный сайт веб разработчика
-                .user-info__username  Лавров Петр
+                .user-info__desc 
+                  | Личный сайт
+                  | <br>веб разработчика
+                .user-info__username 
+                  | Лавров
+                  | <br>Петр
             .hero__buttons
-              a.scroll-btn Скролл
+              a.scroll-btn(href='#') 
+                span.scroll-btn__text Скролл
+                +icon("scroll", "scroll-btn__icon")
         section.about
           .container.about__container
-            .about__left
+            .about__top
               .user
                 .user__avatar
                   .avatar
-                    +image("content/user.jpg", "user pic", "avatar__image")
-                .user__text
+                    +image("content/user.jpg", "avatar__image", "Аватар")
+                .user__classes  
+                  .user__welcome-text Привет, меня зовут
+                  .user__name  Петр Лавров
+                  .user__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            .about__bottom
+              .about__bottom-data
                   - 
                     var rows = [
-                      ["Проживаю:", "Торецк"],
+                      ["Проживаю:", "Торецк (бывший Дзержинск)"],
                       ["Возраст:", "27 лет"],
-                      ["Родился:", "21 мая"]
+                      ["Родился:", "21 мая 1992 года"]
                     ];
-
-                  table.user__data
-                    each row in rows
-                      tr.user__data-row
-                        each cell in row
-                          td #{cell}
-            .about__right
-              .about__welcome-text
-              .about__username
-              .about__desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur cum nemo, vel natus provident id rerum eum cupiditate amet voluptatibus repellendus deleniti velit iure sit, obcaecati distinctio impedit dicta commodi?
-              .about__ps
+                  each row in rows
+                    .about__bottom-row
+                      .about__bottom-title #{row[0]}
+                      .about__bottom-info #{row[1]}
+              .about__bottom-ps
+                p.about__bottom-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .triangles
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 0,100, 1000,100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="1000,0 1000,100, 0,100")
+      section.values
+        
+        .container.values__container  
+          .values__title
+            .values__title-text Чем я могу помочь
+            .values__title-subtext
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia fugiat excepturi eveniet ab amet, ducimus, sint at iste totam recusandae consequatur repellat placeat reiciendis pariatur. Hic beatae reprehenderit error.
+          .values__content
+            - 
+              var items = [
+                ["Frontend", ["Html5", "CSS3", "javaScript", "jQuery"]],
+                ["Backend", ["Html5", "CSS3", "javaScript", "jQuery"]]
+              ];
+            ul.skills-graphic
+              each row in items
+                li.skills-graphic__item
+                  .skills-row
+                    .skills-row__title #{row[0]}
+                    .skills-row__content
+                      ul.skills
+                        each skill in row[1]
+                          li.skills__item
+                            .skill
+                              svg.skills__circle
+                              .skill__title #{skill}
+                    
+      section.works
+        .works__title Мои работы
+        .works__left
+          .slider
+            .slider__display
+              img.slider__display-pic
+              .slider__display-thumbs
+                ul.slider-thumbs
+                  li.slider-thumbs__item
+                    a.slider-thumbs__link
+                      img.slider-thumbs__pic
+              .slider__buttons
+                a.direction-btn.direction-btn--next
+                a.direction-btn.direction-btn--prev
+              
+              .slider__info
+                .slider__tags
+                  ul.tags
+                    li.tags__item Html
+                    li.tags__item Html
+                    li.tags__item Html
+                .slider__info-text
+                  h3.slider__info-title
+                  .slider__info-desc
+                .slider__info-btns
+                  a.iconed-link Посмотреть сайт      
+                
+              
+          

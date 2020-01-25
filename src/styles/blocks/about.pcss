@@ -1,16 +1,110 @@
 .about {
-  display: flex;
+  height: 100vh;
+  min-height: 650px;
 
   &__container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
   }
 
-  &__left {
-    width: 30%;
-    margin-right: 10%;
+  &__top {
+    display: flex;
   }
 
-  &__right {
-    width: 60%
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    &-data {
+      width: 29%;
+    }
+
+    &-text {
+      width: 67%;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      min-width: 40%;
+      opacity: 0.3;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    &-info {
+      text-align: left;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    &-ps {
+      opacity: 0.5;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 400;
+      font-style: italic;
+      color: $text-color;
+      width: 54%;
+    }
+  }
+}
+.user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 80px;
+
+  &__welcome-text {
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 30px;
+    width: 67%;
+  }
+
+  &__name {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: 38px;
+    width: 67%;
+  }
+
+  &__desc {
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+    color: $text-color;
+    /* margin-bottom: 110px; */
+    width: 67%;
+  }
+
+  &__avatar {
+    display: flex;
+    width: 24%;
+  }
+
+  &__classes {
+    width: 54%;
   }
 }
