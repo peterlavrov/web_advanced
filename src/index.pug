@@ -72,17 +72,15 @@ html(lang="en")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="1000,0 1000,100, 0,100")
       section.values
-        
         .container.values__container  
           .values__title
-            .values__title-text Чем я могу помочь
-            .values__title-subtext
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia fugiat excepturi eveniet ab amet, ducimus, sint at iste totam recusandae consequatur repellat placeat reiciendis pariatur. Hic beatae reprehenderit error.
+            .values__title-text Чем я могу быть полезен вам
+            .values__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
           .values__content
             - 
               var items = [
-                ["Frontend", ["Html5", "CSS3", "javaScript", "jQuery"]],
-                ["Backend", ["Html5", "CSS3", "javaScript", "jQuery"]]
+                ["Front-end", ["Html5", "CSS3", "javaScript", "jQuery и Vue.js"]],
+                ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
               ];
             ul.skills-graphic
               each row in items
@@ -94,7 +92,11 @@ html(lang="en")
                         each skill in row[1]
                           li.skills__item
                             .skill
-                              svg.skills__circle
+                              svg.skills__circle(viewBox="0 0 200 200" preserveAspectRatio="none")
+                                linearGradient(id="gradient")
+                                  stop(offset="0%" stop-color="#9300e8")
+                                  stop(offset="100%" stop-color="#4a00ed")
+                                circle(cx="100" cy="100" r="75")
                               .skill__title #{skill}
                     
       section.works
