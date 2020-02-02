@@ -71,60 +71,153 @@ html(lang="en")
             polygon(points="0,0 0,100, 1000,100")
           svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(points="1000,0 1000,100, 0,100")
-      section.values
-        .container.values__container  
-          .values__title
-            .values__title-text Чем я могу быть полезен вам
-            .values__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-          .values__content
-            - 
-              var items = [
-                ["Front-end", ["Html5", "CSS3", "javaScript", "jQuery и Vue.js"]],
-                ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
-              ];
-            ul.skills-graphic
-              each row in items
-                li.skills-graphic__item
-                  .skills-row
-                    .skills-row__title #{row[0]}
-                    .skills-row__content
-                      ul.skills
-                        each skill in row[1]
-                          li.skills__item
-                            .skill
-                              svg.skills__circle(viewBox="0 0 200 200" preserveAspectRatio="none")
-                                linearGradient(id="gradient")
-                                  stop(offset="0%" stop-color="#9300e8")
-                                  stop(offset="100%" stop-color="#4a00ed")
-                                circle(cx="100" cy="100" r="75")
-                              .skill__title #{skill}
-                    
-      section.works
-        .works__title Мои работы
-        .works__left
-          .slider
-            .slider__display
-              img.slider__display-pic
-              .slider__display-thumbs
-                ul.slider-thumbs
-                  li.slider-thumbs__item
-                    a.slider-thumbs__link
-                      img.slider-thumbs__pic
-              .slider__buttons
-                a.direction-btn.direction-btn--next
-                a.direction-btn.direction-btn--prev
-              
-              .slider__info
-                .slider__tags
+      .advantages-section
+        section.values
+          .container.values__container  
+            .values__title
+              .values__title-text Чем я могу быть полезен вам
+              .values__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .values__content
+              - 
+                var items = [
+                  ["Front-end", ["Html5", "CSS3", "javaScript", "jQuery и Vue.js"]],
+                  ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+                ];
+              ul.skills-graphic
+                each row in items
+                  li.skills-graphic__item
+                    .skills-row
+                      .skills-row__title #{row[0]}
+                      .skills-row__content
+                        ul.skills
+                          each skill in row[1]
+                            li.skills__item
+                              .skill
+                                svg.skills__circle(viewBox="0 0 200 200" preserveAspectRatio="none")
+                                  linearGradient(id="gradient")
+                                    stop(offset="0%" stop-color="#9300e8")
+                                    stop(offset="100%" stop-color="#4a00ed")
+                                  circle(cx="100" cy="100" r="75")
+                                .skill__title #{skill}
+                      
+        section.works
+          .container.works__container
+            .works__title Мои работы
+            .works__content
+              .slider
+                .slider__display
+                  +image("content/prev.png", "slider__display-pic", "Превью")
+                  .slider__display-thumbs
+                    ul.slider-thumbs
+                      - var prevs = ["prev1","prev2","prev3","prev4"]
+                        each prev in prevs
+                          li.slider-thumbs__item
+                            a.slider-thumbs__link
+                              +image("content/"+prev+".png", "slider-thumbs__pic", "Превью работы")
+                  .slider__buttons
+                    a.direction-btn.direction-btn--next
+                      +icon("arrow-down", "direction-btn--next--icon arrow--inactive")
+                    a.direction-btn.direction-btn--prev
+                      +icon("arrow-down", "direction-btn--prev--icon")
+              .works__info
+                .works__tags
                   ul.tags
-                    li.tags__item Html
-                    li.tags__item Html
-                    li.tags__item Html
-                .slider__info-text
-                  h3.slider__info-title
-                  .slider__info-desc
-                .slider__info-btns
-                  a.iconed-link Посмотреть сайт      
-                
-              
-          
+                    li.tags__item 
+                      span.tags__item-text HTML
+                    li.tags__item 
+                      span.tags__item-text CSS
+                    li.tags__item 
+                      span.tags__item-text Javascript
+                .works__info-text
+                  h3.works__info-title Сайт школы образования
+                  .works__info-desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .works__info-btns
+                  a.iconed-link 
+                    +icon("link", "iconed-link__pic")
+                    span.iconed-link__text Посмотреть сайт      
+      .feedback-section
+        .triangles
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 1000,0, 1000,100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="1000,0 0,100, 0,0")         
+        section.reviews
+          .container.reviews__container
+            .reviews__top
+              h2.reviews__title Что обо мне говорят
+              .reviews__buttons
+                a.reviews__buttons-prev(href="#")
+                  +icon("arrow-down", "reviews__buttons-prev-pic")
+                a.reviews__buttons-next(href="#")
+                  +icon("arrow-down", "reviews__buttons-next-pic")
+            .reviews__comments
+              ul.comments__list
+                li.comments__item
+                  .comments__quote
+                    +icon("quote", "comments__quote-pic")
+                  .comments__item-content
+                    p.comments__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam dolores natus provident quos rem hic ipsam esse architecto numquam labore ab quo, molestias enim ullam minima culpa nesciunt recusandae mollitia!
+                    .comments__author
+                      .comments__author-avatar
+                        +image("content/user.jpg", "comments__author-avatar-pic", "Аватар")
+                      .comments__author-info
+                        span.comments__author-name Имя автора
+                        span.comments__author-position Должность
+                li.comments__item
+                  .comments__quote
+                    +icon("quote", "comments__quote-pic")
+                  .comments__item-content
+                    p.comments__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam dolores natus provident quos rem hic ipsam esse architecto numquam labore ab quo, molestias enim ullam minima culpa nesciunt recusandae mollitia!
+                    .comments__author
+                      .comments__author-avatar
+                        +image("content/user.jpg", "comments__author-avatar-pic", "Аватар")
+                      .comments__author-info
+                        span.comments__author-name  Имя автора
+                        span.comments__author-position  Должность
+        section.feedback
+          .container.feedback__container
+            h2.feedback__title Связаться со мной
+              .feedback__form
+                form.form(action="")
+                  .form__rows
+                    label.form__item(for="")
+                      h4.form__item-title Введите Ваше Имя
+                      input(type="text")    
+                    label.form__item(for="")
+                      h4.form__item-title Введите Ваш email
+                      input(type="text")    
+                    label.form__item(for="")
+                      h4.form__item-title Сообщение к письму
+                      textarea(name="", cols="30", rows="10")
+                  button.form__submit(type="submit") Отправить
+        footer.footer
+          .container.footer__container
+            .footer__left
+              .footer__copyrigts &#169; 2020
+              .footer__author
+                .footer__author-name Петр Лавров
+                .footer__author-activity
+                |Личный сайт<br>
+                |Веб разработчика
+            .footer__right
+              - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                nav.menu
+                  ul.menu__items
+                    each item in menu
+                      li.menu__item
+                        a.menu__link #{item}
+              .footer__about
+                .footer__about-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                - var icons = ["insta", "vk", "github"]
+                ul.socials
+                  each item in icons
+                    li.socials__item
+                      a.socials__link(href="#")
+                        +icon(item, "socials__"+item)
+              .footer__citate
+                .footer__citate-text  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer__citate-author  Martin Golding
+
+
+
+

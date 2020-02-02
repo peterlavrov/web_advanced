@@ -1,0 +1,74 @@
+.slider {
+  display: flex;
+  position: relative;
+  min-width: 66.5%;
+  &__buttons {
+    display: flex;
+    position: absolute;
+    right: 0;
+  }
+  &__display {
+    width: 100%;
+    height: auto;
+
+    &-thumbs {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &-thumbs {
+    max-height: 100%;
+    &__item {
+      max-height: 100px;
+      height: auto;
+      width: auto;
+      overflow: hidden;
+
+      &--active {
+        outline: 3px solid $orange; 
+      }
+    }
+
+  }
+}
+
+.arrow--inactive {
+  opacity: 0.3;
+}
+
+.direction-btn {
+  display: block;
+  background-color: $btn-bg;
+
+  &--next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transform: rotate(-90deg);
+
+    &--icon {
+      width: 20%;
+      height: 20%;
+      fill: $white;
+    }
+  }
+  &--prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transform: rotate(90deg);
+
+    &--icon {
+      width: 20%;
+      height: 20%;
+      fill: $white;
+    }
+  }
+}
