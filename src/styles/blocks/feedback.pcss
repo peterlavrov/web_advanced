@@ -1,4 +1,17 @@
-.feedback-section {
-  background: url("/src/images/content/budda.png") center center no-repeat;
-  background-size: cover;
+.feedback {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 650px;
+    height: 100vh;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    color: $text-color;
+  }
+
 }
