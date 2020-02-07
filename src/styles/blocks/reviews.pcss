@@ -10,13 +10,14 @@
     align-items: flex-start;
   }
 
-  &__top {
+  &__control-panel {
     display: flex;
   }
 
-  &__buttons {
+  &-controls {
     display: flex;
-    &-prev {
+
+    &__prev {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -30,14 +31,13 @@
       &:hover {
         opacity: 0.5;
       }
-
-      &-pic {
-        width: 20%;
-        height: 20%;
-        fill: $text-color;
-      }
     }
-    &-next {
+    &__pic {
+      width: 20%;
+      height: 20%;
+      fill: $text-color;
+    }
+    &__next {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,12 +49,11 @@
       &:hover {
         opacity: 0.5;
       }
-
-      &-pic {
-        width: 20%;
-        height: 20%;
-        fill: $text-color;
-      }
+    }
+    &__pic {
+      width: 20%;
+      height: 20%;
+      fill: $text-color;
     }
   }
 
@@ -64,12 +63,27 @@
     color: $text-color;
     margin-right: 122px;
   }
-}
 
-.comments {
   &__list {
     display: flex;
     width: 68%;
+  }
+
+  &__review {
+    display: flex;
+  }
+}
+
+.review {
+  &__content {
+    padding-left: 20px;
+    width: 70%;
+  }
+
+  &__pic {
+    width: 73px;
+    height: auto;
+    opacity: 0.05;
   }
 
   &__text {
@@ -81,52 +95,36 @@
     margin-bottom: 30px;
   }
 
-  &__item {
-    display: flex;
-
-    &-content {
-      padding-left: 20px;
-    }
-  }
-
-  &__quote {
-    &-pic {
-      width: 73px;
-      height: auto;
-      opacity: 0.05;
-    }
-  }
-
   &__author {
     display: flex;
+  }
 
-    &-info {
-      display: flex;
-      flex-direction: column;
+  &__avatar {
+    width: 75px;
+    height: 75px;
+    margin-right: 30px;
+    &-pic {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
+  }
 
-    &-name {
+  &-info {
+    display: flex;
+    flex-direction: column;
+    &__name {
       font-size: 18px;
       line-height: 48px;
       font-weight: 700;
       color: $text-color;
     }
-    &-position {
+
+    &__position {
       opacity: 0.3;
       font-size: 16px;
       font-weight: 600;
       color: $text-color;
-    }
-
-    &-avatar {
-      width: 75px;
-      height: 75px;
-      margin-right: 30px;
-      &-pic {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-      }
     }
   }
 }

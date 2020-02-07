@@ -1,0 +1,18 @@
+form.form(action="#" method="GET")
+  .form__fields
+    label.form__field.form-field(for="name")
+      span.form-field__title Введите Ваше Имя
+      .form-field__row
+        +icon("user", "form-field__icon")
+        input.form-field__input(type="text" placeholder="Ковальчук Дмитрий" id="name" name="name")    
+    label.form__field.form-field(for="email")
+      span.form-field__title Введите Ваш email
+      .form-field__row
+        +icon("envelope", "form-field__icon")
+        input.form-field__input(type="text" placeholder="loftschool@study.com" id="email" name="email")    
+    label.form__field.form-field(for="message")
+      span.form-field__title Сообщение к письму
+      .form-field__row
+        +icon("message", "form-field__icon")
+        textarea.form-field__input.form-field__textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" id="message" name="message")
+  button.form__submit(type="submit") Отправить

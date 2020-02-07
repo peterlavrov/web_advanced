@@ -1,0 +1,35 @@
+section.reviews
+  .wrapper
+    .container
+      .reviews__container
+        .reviews__control-panel
+          h2.reviews__title Что обо мне говорят
+          .reviews__controls.reviews-controls
+            a.reviews-controls__prev(href="#")
+              +icon("arrow-down", "reviews-controls__pic")
+            a.reviews-controls__next(href="#")
+              +icon("arrow-down", "reviews-controls__pic")
+        .reviews__items
+          ul.reviews__list
+            li.reviews__review
+              .review__quote
+                +icon("quote", "review__pic")
+              .review__content
+                p.review__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam dolores natus provident quos rem hic ipsam esse architecto numquam labore ab quo, molestias enim ullam minima culpa nesciunt recusandae mollitia!
+                .review__author
+                  .review__avatar
+                    +image("content/user.jpg", "review__avatar-pic", "Аватар")
+                  .review__info.review-info
+                    span.review-info__name Имя автора
+                    span.review-info__position Должность
+            li.reviews__review
+              .review__quote
+                +icon("quote", "review__pic")
+              .review__content
+                p.review__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam dolores natus provident quos rem hic ipsam esse architecto numquam labore ab quo, molestias enim ullam minima culpa nesciunt recusandae mollitia!
+                .review__author
+                  .review__avatar
+                    +image("content/user.jpg", "review__avatar-pic", "Аватар")
+                  .review__info.review-info
+                    span.review-info__name Имя автора
+                    span.review-info__position Должность

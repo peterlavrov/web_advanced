@@ -1,26 +1,21 @@
 .slider {
-  display: flex;
-  position: relative;
-  min-width: 66.5%;
-  &__buttons {
-    display: flex;
-    position: absolute;
-    right: 0;
-  }
-  &__display {
+  &__view {
     width: 100%;
     height: auto;
-
-    &-thumbs {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
   }
+  &-track {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: auto;
+    box-shadow: -10px -10px 30px $black;
 
-  &-thumbs {
-    max-height: 100%;
+    &__link {
+      display: block;
+    }
+
     &__item {
       max-height: 100px;
       height: auto;
@@ -28,44 +23,41 @@
       overflow: hidden;
 
       &--active {
-        outline: 3px solid $orange; 
+        outline: 3px solid $orange;
       }
     }
-
   }
 }
 
-.arrow--inactive {
-  opacity: 0.3;
-}
+.slider-buttons {
+  display: flex;
+  position: absolute;
+  right: 0;
 
-.direction-btn {
-  display: block;
-  background-color: $btn-bg;
-
-  &--next {
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $btn-bg;
     width: 50px;
     height: 50px;
-    transform: rotate(-90deg);
 
-    &--icon {
+    &--inactive svg {
+      opacity: 0.3;
+    }
+  }
+
+  &__icon {
+    &--next {
+      display: block;
+      transform: rotate(-90deg);
       width: 20%;
       height: 20%;
       fill: $white;
     }
-  }
-  &--prev {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    transform: rotate(90deg);
-
-    &--icon {
+    &--prev {
+      display: block;
+      transform: rotate(90deg);
       width: 20%;
       height: 20%;
       fill: $white;

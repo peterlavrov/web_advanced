@@ -1,3 +1,7 @@
+.footer .container {
+  height: unset;
+}
+
 .footer {
   background-color: $footer-bg;
   &__container {
@@ -10,75 +14,78 @@
     display: flex;
   }
 
-  &__left {
-    display: flex;
-    flex-basis: 33.3%;
-  }
-
-  &__copyrights {
-    opacity: 0.1;
-    font-size: 48px;
-    line-height: 1;
-    font-weight: 600;
-    color: $white;
-    margin-right: 60px;
-  }
-
-  &__author {
-    &-name {
-      font-size: 18px;
-      line-height: 30px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: $white;
-      margin-bottom: 20px;
+  &-content {
+    &__copyrights {
+      display: flex;
+      flex-basis: 33.3%;
     }
 
-    &-activity {
-      opacity: 0.14;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 400;
+    &__year {
+      opacity: 0.1;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
       color: $white;
+      margin-right: 60px;
+    }
+
+    &__author {
+      &-name {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 20px;
+      }
+
+      &-activity {
+        opacity: 0.14;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        color: $white;
+      }
     }
   }
 
-  &__right {
+  &-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-basis: 66.7%;
-  }
 
-  &__about {
-    display: flex;
+    &__about {
+      display: flex;
 
-    &-author-text {
-      opacity: 0.3;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 400;
-      color: $white;
-      width: 80%;
-      margin-bottom: 30px;
+      &-text {
+        opacity: 0.3;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        color: $white;
+        width: 80%;
+        margin-bottom: 30px;
+      }
     }
 
-    &-citate-text {
-      opacity: 0.3;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 400;
-      color: $white;
-      width: 80%;
-      margin-bottom: 30px;
-    }
-
-    &-citate-author {
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 400;
-      font-style: italic;
-      color: $white;
+    &__quote {
+      &-item {
+        opacity: 0.3;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        color: $white;
+        width: 80%;
+        margin-bottom: 30px;
+      }
+      &-author {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 400;
+        font-style: italic;
+        color: $white;
+      }
     }
   }
 }
