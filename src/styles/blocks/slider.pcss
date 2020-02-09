@@ -11,17 +11,28 @@
     width: 20%;
     height: auto;
     box-shadow: -10px -10px 30px $black;
+    overflow: hidden;
+    @include desktop {
+      /* width: 28%; */
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
 
     &__link {
       display: block;
     }
 
     &__item {
-      max-height: 100px;
       height: auto;
       width: auto;
       overflow: hidden;
 
+      @include desktop {
+      }
       &--active {
         outline: 3px solid $orange;
       }

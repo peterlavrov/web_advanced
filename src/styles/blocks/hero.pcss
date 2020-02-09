@@ -20,6 +20,11 @@
     margin: 0 90px;
     width: 47%;
     align-items: center;
+
+    @include desktop {
+      width: unset;
+      flex-grow: 1;
+    }
   }
 
   &__links {
@@ -41,6 +46,9 @@
 }
 
 .user-info {
+  @include desktop {
+    display: flex;
+  }
   &__description {
     font-size: 18px;
     line-height: 30px;
@@ -48,6 +56,12 @@
     color: $text-color;
     opacity: 0.4;
     margin-bottom: 33px;
+
+    @include desktop {
+      text-align: right;
+      margin-bottom: 0;
+      margin-right: 60px;
+    }
   }
 }
 .user-info__username {
@@ -76,7 +90,6 @@
 
   &__text {
     margin-right: 10px;
-    
   }
   &__icon {
     height: 30px;

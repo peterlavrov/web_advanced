@@ -4,6 +4,11 @@
   background: url("/src/images/content/backpack.png") left center no-repeat;
   background-size: auto 80%;
 
+  @include desktop {
+    background-size: auto 70%;
+    background-position-x: -25%;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -15,6 +20,10 @@
   &-profit {
     width: 40%;
     margin-bottom: 4%;
+
+    @include desktop {
+      width: 50%;
+    }
     &__title {
       font-size: 30px;
       line-height: 36px;
@@ -35,6 +44,10 @@
   &__skills-graphic {
     width: 54%;
     align-self: flex-end;
+
+    @include desktop {
+      width: 63%;
+    }
   }
 }
 
@@ -47,6 +60,5 @@
   &__row {
     display: flex;
     flex-direction: column;
-
   }
 }

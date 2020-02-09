@@ -3,15 +3,10 @@
   min-height: 650px;
 
   &__container {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; */
     display: grid;
     height: 100%;
     align-content: center;
-    grid-template:
-      "user tale" auto / 45% 55%;
+    grid-template: "user tale" auto / 45% 55%;
     grid-gap: 0 10px;
   }
 
@@ -24,9 +19,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    /* width: 45%; */
     grid-area: user;
     padding-right: 60px;
+
+    @include desktop {
+      padding-right: 0;
+      align-items: center;
+    }
 
     &__info {
       display: flex;
@@ -60,57 +59,26 @@
 
     &__data {
       width: 60%;
+      @include desktop {
+        width: 85%;
+      }
     }
-
-    /* &__welcome-text {
-      opacity: 0.5;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 600;
-      color: $text-color;
-      margin-bottom: 30px;
-      width: 67%;
-    }
-
-    &__name {
-      font-size: 36px;
-      line-height: 48px;
-      font-weight: 700;
-      color: $text-color;
-      margin-bottom: 38px;
-      width: 67%;
-    }
-
-    &__desc {
-      opacity: 0.5;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 600;
-      color: $text-color;
-      width: 67%;
-    }
-
-    &__avatar {
-      display: flex;
-    }
-
-    &__classes {
-      width: 54%;
-    } */
   }
 
   &-tale {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* width: 55%; */
     align-self: start;
-    /* padding-left: 10px; */
     grid-area: tale;
 
     &__classes {
       margin-bottom: 100px;
       width: 65%;
+
+      @include desktop {
+        width: 85%;
+      }
     }
 
     &__welcome {
@@ -139,6 +107,10 @@
     &__ps {
       position: relative;
       width: 65%;
+
+      @include desktop {
+        width: 85%;
+      }
     }
 
     &__paragraph {
