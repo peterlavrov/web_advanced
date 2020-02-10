@@ -13,7 +13,7 @@
     box-shadow: -10px -10px 30px $black;
     overflow: hidden;
     @include desktop {
-      /* width: 28%; */
+      width: 28%;
     }
 
     &__list {
@@ -31,7 +31,10 @@
       width: auto;
       overflow: hidden;
 
+      &:last-child {
       @include desktop {
+        display: none;
+      }
       }
       &--active {
         outline: 3px solid $orange;
