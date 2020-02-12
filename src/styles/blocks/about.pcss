@@ -1,0 +1,199 @@
+.about {
+  min-height: 650px;
+
+  &__container {
+    display: grid;
+    height: 100%;
+    align-content: center;
+    grid-template: "user tale" auto / 45% 55%;
+    grid-gap: 0 10px;
+    padding-top: 80px;
+  }
+
+  &__user {
+    display: flex;
+  }
+
+  &-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    grid-area: user;
+    padding-right: 60px;
+
+    @include desktop {
+      padding-right: 0;
+      align-items: center;
+    }
+
+    &__info {
+      display: flex;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-point {
+        opacity: 0.3;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+        width: 35%;
+      }
+
+      &-data {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+        width: 65%;
+      }
+    }
+
+    &__avatar {
+      display: flex;
+      justify-content: center;
+      width: 60%;
+      margin-bottom: 80px;
+    }
+
+    &__data {
+      width: 60%;
+      @include desktop {
+        width: 85%;
+      }
+    }
+  }
+
+  &-tale {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: start;
+    grid-area: tale;
+
+    &__classes {
+      margin-bottom: 100px;
+      width: 65%;
+
+      @include desktop {
+        width: 85%;
+      }
+    }
+
+    &__welcome {
+      opacity: 0.5;
+      font-size: 16px;
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+
+    &__name {
+      font-size: 36px;
+      font-weight: 700;
+      color: $text-color;
+      margin-bottom: 30px;
+    }
+
+    &__desc {
+      opacity: 0.5;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    &__ps {
+      position: relative;
+      width: 65%;
+
+      @include desktop {
+        width: 85%;
+      }
+    }
+
+    &__paragraph {
+      opacity: 0.5;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 400;
+      font-style: italic;
+      color: $text-color;
+
+      &:before {
+        display: block;
+        content: "*";
+        position: absolute;
+        left: -8%;
+        top: 10px;
+        opacity: 0.1;
+        font-size: 48px;
+        line-height: 30px;
+        font-weight: 400;
+        font-style: italic;
+        color: $ps-color;
+      }
+    }
+    /* &-data {
+      width: 26%;
+      margin-right: 30px;
+    }
+
+    &-text {
+      position: relative;
+      width: 67%;
+
+      &:before {
+        display: block;
+        content: "*";
+        position: absolute;
+        left: -12%;
+        top: 10px;
+        opacity: 0.1;
+        font-size: 48px;
+        line-height: 30px;
+        font-weight: 400;
+        font-style: italic;
+        color: $ps-color;
+      }
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      min-width: 40%;
+      opacity: 0.3;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    &-info {
+      text-align: left;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    &-ps {
+      opacity: 0.5;
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 400;
+      font-style: italic;
+      color: $text-color;
+      width: 54%;
+    } */
+  }
+}

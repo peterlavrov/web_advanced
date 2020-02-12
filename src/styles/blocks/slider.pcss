@@ -1,0 +1,80 @@
+.slider {
+  &__view {
+    width: 100%;
+    height: auto;
+  }
+  &-track {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: auto;
+    box-shadow: -10px -10px 30px $black;
+    overflow: hidden;
+    @include desktop {
+      width: 28%;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      display: block;
+    }
+
+    &__item {
+      height: auto;
+      width: auto;
+      overflow: hidden;
+
+      &:last-child {
+      @include desktop {
+        display: none;
+      }
+      }
+      &--active {
+        outline: 3px solid $orange;
+      }
+    }
+  }
+}
+
+.slider-buttons {
+  display: flex;
+  position: absolute;
+  right: 0;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-bg;
+    width: 50px;
+    height: 50px;
+
+    &--inactive svg {
+      opacity: 0.3;
+    }
+  }
+
+  &__icon {
+    &--next {
+      display: block;
+      transform: rotate(-90deg);
+      width: 20%;
+      height: 20%;
+      fill: $white;
+    }
+    &--prev {
+      display: block;
+      transform: rotate(90deg);
+      width: 20%;
+      height: 20%;
+      fill: $white;
+    }
+  }
+}

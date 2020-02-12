@@ -1,0 +1,33 @@
+footer.footer
+  .wrapper
+    .container
+      .footer__container
+        .footer__content.footer-content
+          .footer-content__copyrights
+            .footer-content__year &#169; 2020
+            .footer-content__author
+              .footer-content__author-name
+                |Петр <br>
+                |Лавров
+              .footer-content__author-activity
+                |Личный сайт<br>
+                |Веб разработчика
+          .footer__info.footer-info
+            - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+              nav.menu
+                ul.menu__items
+                  each item in menu
+                    li.menu__item
+                      a.menu__link #{item}
+            .footer-info__about
+              .footer-info__about-author
+                .footer-info__about-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                - var icons = ["insta", "vk", "github"]
+                ul.socials
+                  each item in icons
+                    li.socials__item
+                      a.socials__link(href="#")
+                        +icon(item, "socials__"+item)
+              .footer-info__quote
+                .footer-info__quote-item  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                .footer-info__quote-author  Martin Golding

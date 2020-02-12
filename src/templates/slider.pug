@@ -1,0 +1,15 @@
+
+.slider__view
+  +image("content/prev.png", "slider__preview", "Превью")
+  .slider__track.slider-track
+    ul.slider-track__list
+      - var prevs = ["prev","prev","prev","prev"]
+        each prev in prevs
+          li.slider-track__item
+            a.slider-track__link
+              +image("content/"+prev+".png", "slider-track__pic", "Превью работы")
+  .slider__buttons.slider-buttons
+    a.slider-buttons__button.slider-buttons__button--next.slider-buttons__button--inactive
+      +icon("arrow-down", "slider-buttons__icon--next")
+    a.slider-buttons__button.slider-buttons__button--prev
+      +icon("arrow-down", "slider-buttons__icon--prev")

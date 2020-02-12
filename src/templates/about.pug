@@ -1,0 +1,25 @@
+section.about
+  .wrapper
+    .container
+      .about__container
+        .about__user.about-user
+          .about-user__avatar
+            include ./avatar.pug
+          .about-user__data
+            - 
+              var rows = [
+                ["Проживаю:", "Торецк (бывший Дзержинск)"],
+                ["Возраст:", "27 лет"],
+                ["Родился:", "21 мая 1992 года"]
+              ];
+            each row in rows
+              .about-user__info
+                .about-user__info-point #{row[0]}
+                .about-user__info-data #{row[1]}
+        .about__tale.about-tale
+          .about-tale__classes  
+            .about-tale__welcome Привет, меня зовут
+            .about-tale__name  Петр Лавров
+            .about-tale__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+          .about-tale__ps
+            p.about-tale__paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

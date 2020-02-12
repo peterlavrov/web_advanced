@@ -1,0 +1,64 @@
+.values {
+  min-height: 650px;
+  background: url("/src/images/content/backpack.png") left center no-repeat;
+  background-size: auto 65%;
+
+  @include desktop {
+    background-size: auto 60%;
+    background-position-x: -25%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+  }
+
+  &-profit {
+    width: 40%;
+    margin-bottom: 4%;
+
+    @include desktop {
+      width: 50%;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: 700;
+      color: $text-color;
+      margin-bottom: 60px;
+    }
+
+    &__info {
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $text-color;
+      opacity: 0.5;
+    }
+  }
+
+  &__skills-graphic {
+    width: 54%;
+    align-self: flex-end;
+
+    @include desktop {
+      width: 63%;
+    }
+  }
+}
+
+.skills {
+  &-graphic {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+  }
+}

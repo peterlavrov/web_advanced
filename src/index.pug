@@ -4,12 +4,25 @@ include ./mixins.pug
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title Portfolio | main page
   body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+    .welcome-section
+      include ./templates/hero.pug
+      include ./templates/about.pug
+      include ./templates/welcome-delimeter.pug
+    .advantages-section
+      include ./templates/values.pug
+      include ./templates/works.pug      
+    .feedback-section
+      include ./templates/feedback-delimeter.pug      
+      include ./templates/reviews.pug     
+      include ./templates/feedback.pug     
+    include ./templates/footer.pug     
+        
+      
+
+
+
+

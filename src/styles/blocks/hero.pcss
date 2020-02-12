@@ -1,0 +1,96 @@
+.hero {
+  min-height: 650px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 59px;
+    margin-bottom: 320px;
+  }
+
+  &__menu {
+    display: flex;
+    margin: 0 90px;
+    width: 47%;
+    align-items: center;
+
+    @include desktop {
+      width: unset;
+      flex-grow: 1;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    width: 163px;
+  }
+
+  &__user-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 240px;
+  }
+
+  &__scroll {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 59px;
+  }
+}
+
+.user-info {
+  @include desktop {
+    display: flex;
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    color: $text-color;
+    opacity: 0.4;
+    margin-bottom: 33px;
+
+    @include desktop {
+      text-align: right;
+      margin-bottom: 0;
+      margin-right: 60px;
+    }
+  }
+}
+.user-info__username {
+  font-size: 72px;
+  line-height: 60px;
+  font-weight: 800;
+}
+
+.scroll {
+  &__button {
+    display: flex;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    color: $text-color;
+    text-decoration: unset;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    margin-right: 10px;
+  }
+  &__icon {
+    height: 30px;
+  }
+}
