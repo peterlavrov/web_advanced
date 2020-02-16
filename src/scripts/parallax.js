@@ -25,8 +25,6 @@ function moveLayersDependsOnScroll(wScroll1, wScroll2) {
 window.addEventListener('scroll', e => {
   const wScroll1 = window.pageYOffset;
   const wScroll2 = feedback.getBoundingClientRect().y;
-  console.log(wScroll1);
-  console.log(wScroll2);
   moveLayersDependsOnScroll(wScroll1, wScroll2);
 });
 

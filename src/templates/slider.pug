@@ -1,15 +1,63 @@
+script(type="text/x-template")#slider-container 
+  .works__content
+    display(
+      :works="works"
+      :currentWork="currentWork"
+      :isFirst="isFirst"
+      :isLast="isLast"
+      @slide="handleSlide"
+    )
+    info(
+      :currentWork="currentWork"
+    )
 
-.slider__view
-  +image("content/prev.png", "slider__preview", "Превью")
+script(type="text/x-template")#slider-display 
+  .works__slider.slider  
+    .slider__view
+      img(:src="currentWork.photo", alt="Превью" "slider__preview")
+      buttons(
+        @slide="direction => $emit('slide', direction)"
+        :isFirst="isFirst"
+        :isLast="isLast"
+      )
+      sliderTrack(
+        :works="reversedWorks"
+        :currentWork="currentWork"
+        @slide="direction => $emit('slide', direction)"
+      )
+      
+script(type="text/x-template")#slider-track
   .slider__track.slider-track
     ul.slider-track__list
-      - var prevs = ["prev","prev","prev","prev"]
-        each prev in prevs
-          li.slider-track__item
-            a.slider-track__link
-              +image("content/"+prev+".png", "slider-track__pic", "Превью работы")
+      li.slider-track__item(
+        v-for="(work, index) in works"
+        :class="{'slider-track__item--active': work.id === currentWork.id}"
+        )
+        a.slider-track__link(
+          @click.prevent="$emit('slide', work.id - 1)"
+        )
+          img(:src="works[index].photo" class="slider-track__pic" alt="Превью")
+
+script(type="text/x-template")#slider-buttons
   .slider__buttons.slider-buttons
-    a.slider-buttons__button.slider-buttons__button--next.slider-buttons__button--inactive
+    button.slider-buttons__button.slider-buttons__button--next(@click.prevent="$emit('slide', 'next')" href="#" :class="{'slider-buttons__button--inactive': isLast}") 
       +icon("arrow-down", "slider-buttons__icon--next")
-    a.slider-buttons__button.slider-buttons__button--prev
+    button.slider-buttons__button.slider-buttons__button--prev(@click.prevent="$emit('slide', 'prev')" href="#" :class="{'slider-buttons__button--inactive': isFirst}") 
       +icon("arrow-down", "slider-buttons__icon--prev")
+
+script(type="text/x-template")#slider-info
+  .works__info
+    tags(:tags="tagsArray")
+    .works__info-school
+      h3.info-school__title {{currentWork.title}}
+      .info-school__desc {{currentWork.desc}}
+    .works__info-link
+      a.info-link(:href="currentWork.link") 
+        +icon("link", "info-link__pic")
+        span.info-link__text Посмотреть сайт
+script(type="text/x-template")#slider-tags
+  .works__tags
+    ul.tags
+      li.tags__item(v-for="tag in tags") 
+        span.tags__text {{tag}}
+      

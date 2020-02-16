@@ -3,22 +3,5 @@ section.works
     .container
       .works__container
         .works__title Мои работы
-        .works__content
-          .works__slider.slider  
-            include ./slider.pug
-          .works__info
-            .works__tags
-              ul.tags
-                li.tags__item 
-                  span.tags__text HTML
-                li.tags__item 
-                  span.tags__text CSS
-                li.tags__item 
-                  span.tags__text Javascript
-            .works__info-school
-              h3.info-school__title Сайт школы образования
-              .info-school__desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-            .works__info-link
-              a.info-link 
-                +icon("link", "info-link__pic")
-                span.info-link__text Посмотреть сайт
+        #slider-component
+        

@@ -1,28 +1,3 @@
-//- script(type="text/x-template")#skills
-//-   .values__skills-graphic
-//-     - 
-//-       var items = [
-//-         ["Front-end", ["Html5", "CSS3", "javaScript", "jQuery и Vue.js"]],
-//-         ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
-//-       ];
-//-     ul.skills-graphic
-//-       each row in items
-//-         li.skills-graphic__item
-//-           .skills-graphic__row.skills-row
-//-             .skills-row__title #{row[0]}
-//-             .skills-row__skills
-//-               ul.skills
-//-                 each skill in row[1]
-//-                   li.skills__item
-//-                     .skill
-//-                       svg.skills__circle(viewBox="0 0 200 200" preserveAspectRatio="none")
-//-                         linearGradient(id="gradient")
-//-                           stop(offset="0%" stop-color="#9300e8")
-//-                           stop(offset="100%" stop-color="#4a00ed")
-//-                         circle.circle__under(cx="100" cy="100" r="75")
-//-                         circle.circle__above(cx="100" cy="100" r="75" transform="rotate(-180 100 100)")
-//-                       .skill__title #{skill}
-
 script(type="text/x-template")#skills-list
   .values__skills-graphic
     ul.skills-graphic
