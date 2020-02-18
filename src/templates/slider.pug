@@ -5,6 +5,9 @@ script(type="text/x-template")#slider-container
       :currentWork="currentWork"
       :isFirst="isFirst"
       :isLast="isLast"
+      :slidesOnTrack="slidesOnTrack"
+      :slidesStart="slidesStart"
+      :slidesEnd="slidesEnd"
       @slide="handleSlide"
     )
     info(
@@ -23,6 +26,7 @@ script(type="text/x-template")#slider-display
       sliderTrack(
         :works="reversedWorks"
         :currentWork="currentWork"
+        :slidesOnTrack="slidesOnTrack"
         @slide="direction => $emit('slide', direction)"
       )
       
@@ -47,6 +51,7 @@ script(type="text/x-template")#slider-buttons
 
 script(type="text/x-template")#slider-info
   .works__info
+    .works__info-index {{currentWork.id}}
     tags(:tags="tagsArray")
     .works__info-school
       h3.info-school__title {{currentWork.title}}

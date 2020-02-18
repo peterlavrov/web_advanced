@@ -31,4 +31,31 @@
     "link": "//google.com",
     "desc": "4 Этот парень проходил обучение веб-разработке не где-то, а в Loftschool!"
   }
+  ,
+  {
+    "id": 5,
+    "title": "5 Сайт школы онлайн образования",
+    "skills": "5 Html, Css, Javascript",
+    "photo": "1.jpg",
+    "link": "//google.com",
+    "desc": "5 Этот парень проходил обучение веб-разработке не где-то, а в Loftschool!"
+  }
+  ,
+  {
+    "id": 6,
+    "title": "6 Сайт школы онлайн образования",
+    "skills": "6 Html, Css, Javascript",
+    "photo": "2.jpg",
+    "link": "//google.com",
+    "desc": "6 Этот парень проходил обучение веб-разработке не где-то, а в Loftschool!"
+  }
+  ,
+  {
+    "id": 7,
+    "title": "7 Сайт школы онлайн образования",
+    "skills": "7 Html, Css, Javascript",
+    "photo": "3.jpg",
+    "link": "//google.com",
+    "desc": "7 Этот парень проходил обучение веб-разработке не где-то, а в Loftschool!"
+  }
 ]

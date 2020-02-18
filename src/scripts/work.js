@@ -3,7 +3,13 @@ import Vue from "vue";
 
 const sliderTrack = {
   template: "#slider-track",
-  props: ["works", "currentWork"]
+  props: ["works", "currentWork", "slidesOnTrack"],
+  methods: {
+    
+  },
+  watch: {
+    
+  }
 }
 
 const buttons = {
@@ -16,10 +22,10 @@ const display = {
   components: {
     sliderTrack, buttons
   },
-  props: ["works", "currentWork", "isFirst", "isLast"],
+  props: ["works", "currentWork", "isFirst", "isLast", "slidesOnTrack", "slidesStart", "slidesEnd"],
   computed: {
     reversedWorks() {
-      return [...this.works].reverse();
+      return [...this.works].slice(this.slidesStart, this.slidesEnd).reverse();
     }
   }
 }
@@ -52,9 +58,13 @@ new Vue({
   data() {
     return {
       works: [],
+      displayedWorks: [],
       currentIndex: 0,
       isFirst: true,
-      isLast: false
+      isLast: false,
+      slidesOnTrack: 0,
+      slidesStart: 0,
+      slidesEnd: 3
     }
   },
   computed: {
@@ -72,13 +82,20 @@ new Vue({
       })
     },
     handleSlide(direction) {
-      console.log(direction);
       switch (direction) {
         case "next":
           this.currentIndex++;
+          if (this.currentIndex > this.slidesOnTrack - 1 && this.isLast != true) {
+            this.slidesStart++;
+            this.slidesEnd++;
+          }
           break;
         case "prev":
           this.currentIndex--;
+          if (this.currentIndex < this.slidesStart && this.isFirst != true) {
+            this.slidesStart--;
+            this.slidesEnd--;
+          }
           break;
         default:
           this.currentIndex = direction;
@@ -104,20 +121,34 @@ new Vue({
         isLast = false;
         isFirst = false;
       }
-      
-      console.log(isLast);
-      console.log(isFirst);
       this.isFirst = isFirst;
       this.isLast = isLast;
+    },
+    changeSlidesNum () {
+      let windowWidth = window.innerWidth;
+      if (windowWidth > 1200) {
+        this.slidesOnTrack = 4;
+      } else if (windowWidth <= 1200) {
+        this.slidesOnTrack = 3;
+      }
+    },
+    sliderShift(value) {
+      this.slidesEnd = value - this.slidesStart;
     }
   },
   watch: {
     currentIndex(value) {
       this.makeFiniteLoopForIndex(value)
+    },
+    slidesOnTrack(value) {
+      this.changeSlidesNum();
+      this.sliderShift(value);
     }
   },
   created() {
     const data = require("../data/works.json");
     this.works = this.makeArrWithRequiredImages(data);
+    window.addEventListener('resize', this.changeSlidesNum);
+    this.changeSlidesNum();
   }
 });
