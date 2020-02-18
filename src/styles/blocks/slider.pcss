@@ -30,9 +30,9 @@
       width: auto;
 
       &:last-child {
-      @include desktop {
-        /* display: none; */
-      }
+        @include desktop {
+          /* display: none; */
+        }
       }
       &--active {
         outline: 3px solid $orange;
@@ -57,6 +57,10 @@
 
     &--inactive svg {
       opacity: 0.3;
+    }
+    &--inactive {
+      cursor: auto;
+      pointer-events: none;
     }
   }
 
