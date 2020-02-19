@@ -21,6 +21,11 @@
       grid-template: "slider info" auto / 55% 45%;
       align-items: start;
     }
+    @include tablets {
+      grid-template:
+        "slider" auto
+        "info" auto / 95% 95%;
+    }
   }
 
   &__slider {
@@ -30,6 +35,9 @@
     @include desktop {
       width: 90%;
       grid-area: slider;
+    }
+    @include tablets {
+      margin-bottom: 50px;
     }
   }
 
@@ -44,6 +52,10 @@
       grid-area: info;
       width: unset;
     }
+    @include tablets {
+      margin-left: 0;
+      align-items: center;
+    }
 
     &-index {
       display: block;
@@ -55,17 +67,26 @@
       left: 0;
       transform: translateX(-100%);
       z-index: -5;
-      @include desktop {content: "2";
+      @include desktop {
         font-size: 300px;
         font-weight: 800;
         color: creamy;
         line-height: 210px;
+      }
+      @include tablets {
+        left: unset;
+        right: 0;
+        transform: translate(50%, -200%);
       }
     }
 
     &-school {
       @include desktop {
         width: 78%;
+      }
+      @include tablets {
+        width: 65%;
+        text-align: center;
       }
     }
   }
@@ -117,8 +138,6 @@
     &:last-child {
       margin-right: 0;
     }
-
-    
   }
 }
 

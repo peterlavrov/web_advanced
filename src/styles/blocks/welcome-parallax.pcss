@@ -30,6 +30,9 @@
       .welcome-parallax__image {
         right: 0;
         top: 350px;
+        @include tablets {
+          top: 450px;
+        }
       }
     }
 
@@ -38,6 +41,11 @@
         top: 518px;
         left: 50%;
         margin-left: 12%;
+        @include tablets {
+          width: 25%;
+          height: auto;
+          left: 60%;
+        }
       }
     }
 
@@ -48,6 +56,9 @@
       }
     }
     &:nth-child(5) {
+      @include tablets {
+        display: none;
+      }
       .welcome-parallax__image {
         left: 0;
         top: 610px;
@@ -58,6 +69,9 @@
       .welcome-parallax__image {
         right: 0;
         bottom: 0;
+        @include tablets {
+          bottom: 300px;
+        }
       }
     }
 
@@ -66,6 +80,9 @@
         bottom: -400px;
         left: 0;
         width: 100%;
+        @include tablets {
+          bottom: 200px;
+        }
       }
     }
     &:nth-child(8) {

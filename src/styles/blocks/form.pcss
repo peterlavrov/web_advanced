@@ -1,4 +1,6 @@
 .form {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 80px;
   &__fields {
     display: flex;
@@ -8,6 +10,9 @@
     @include desktop {
     width: 75%;
   }
+  @include tablets {
+      width: 90%;
+    }
   }
   &-field {
     &__title {
@@ -86,6 +91,9 @@
     font-weight: 700;
     text-transform: uppercase;
     color: $white;
+    @include tablets {
+     margin: 0 auto;
+    }
 
     &:hover {
       box-shadow: 0 0 20px $text-color;

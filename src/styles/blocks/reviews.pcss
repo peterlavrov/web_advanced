@@ -10,6 +10,12 @@
     padding-top: 120px;
     width: 800px;
     overflow: hidden;
+    @include desktop {
+      width: 1000px;
+    }
+    @include tablets {
+      width: 87%;
+    }
   }
 
   &__control-panel {
@@ -86,6 +92,9 @@
   &__content {
     padding-left: 20px;
     width: 60%;
+    @include tablets {
+      width: 70%; 
+    }
   }
 
   &__pic {

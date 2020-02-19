@@ -130,6 +130,8 @@ new Vue({
         this.slidesOnTrack = 4;
       } else if (windowWidth <= 1200) {
         this.slidesOnTrack = 3;
+      } else if (windowWidth <= 768) {
+        this.slidesOnTrack = 3;
       }
     },
     sliderShift(value) {

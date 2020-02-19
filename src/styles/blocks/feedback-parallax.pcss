@@ -39,7 +39,11 @@
         right: 200px;
 
         @include desktop {
-          right: -15%; 
+          right: -15%;
+        }
+        @include tablets {
+          right: -200px;
+          width: 50%;
         }
       }
     }
@@ -47,7 +51,6 @@
     &:nth-child(4) {
       .feedback-parallax__image {
         bottom: -220px;
-        /* width: 100%; */
       }
     }
     &:nth-child(5) {

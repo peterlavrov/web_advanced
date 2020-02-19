@@ -63,12 +63,24 @@
     justify-content: center;
     flex-basis: 66.7%;
 
+    @include tablets {
+      flex-basis: 70%; 
+    }
+
     &__about {
       display: flex;
+
+      @include tablets {
+        flex-direction: column;
+      }
 
       &-author {
         @include desktop {
           margin-right: 30px;
+        }
+        @include tablets {
+          margin-right: 0;
+          margin-bottom: 40px;
         }
       }
 
@@ -82,6 +94,9 @@
         margin-bottom: 30px;
         @include desktop {
           width: 100%;
+        }
+        @include tablets {
+          margin-bottom: 10px;
         }
       }
     }
@@ -97,7 +112,10 @@
         margin-bottom: 30px;
         @include desktop {
           width: 100%;
-  }
+        }
+        @include tablets {
+          margin-bottom: 10px;
+        }
       }
       &-author {
         font-size: 16px;
