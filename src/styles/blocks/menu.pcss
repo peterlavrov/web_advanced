@@ -38,6 +38,7 @@
   }
   .menu__link {
     color: $white;
+    line-height: 3;
   }
   .menu__items {
     @include tablets {
@@ -47,6 +48,9 @@
   .menu__item {
     @include tablets {
       flex-basis: 25%;
+    }
+    @include phones {
+      flex-basis: calc(1/2*100%);
     }
   }
 }

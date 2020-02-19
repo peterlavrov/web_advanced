@@ -16,15 +16,25 @@
     @include tablets {
       width: 87%;
     }
+    @include phones {
+      padding-top: 40px;
+      width: 100%;
+  }
   }
 
   &__control-panel {
     display: flex;
     margin-bottom: 80px;
+    @include phones {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 30px;
+  }
   }
 
   &-controls {
     display: flex;
+    justify-content: center;
 
     &__prev {
       display: flex;
@@ -71,6 +81,12 @@
     font-weight: 700;
     color: $text-color;
     margin-right: 122px;
+    @include phones {
+      font-size: 24px;
+      margin-right: 0;
+      text-align: center;
+      margin-bottom: 25px;
+  }
   }
 
   &__list {
@@ -94,6 +110,15 @@
     width: 60%;
     @include tablets {
       width: 70%; 
+    }
+    @include tablets {
+     width: 90%; 
+    }
+  }
+
+  &__quote {
+    @include tablets {
+      display: none; 
     }
   }
 

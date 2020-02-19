@@ -11,6 +11,8 @@ var swiper = new Swiper('.swiper-container', {
   grabCursor: true,
   breakpoints: {
     361: {
+      width: 300,
+      slidesPerView: 1
     },
     481: {
     },

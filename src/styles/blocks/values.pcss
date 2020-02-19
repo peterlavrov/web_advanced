@@ -15,6 +15,9 @@
     justify-content: center;
     align-items: center;
     padding: 70px 0;
+    @include phones {
+      padding: 30px 0;
+    }
   }
 
   &__backpack {
@@ -31,6 +34,9 @@
       left: unset;
       height: 300px;
     }
+    @include phones {
+      height: 200px; 
+    }
   }
 
   &-profit {
@@ -43,6 +49,9 @@
     @include tablets {
      width: 60%; 
     }
+    @include phones {
+      width: 80%;
+    }
     &__title {
       font-size: 30px;
       line-height: 36px;
@@ -51,6 +60,10 @@
       margin-bottom: 60px;
       @include tablets {
       text-align: center;
+    }
+    @include phones {
+     text-align: left; 
+     font-size: 24px;
     }
     }
 
@@ -62,6 +75,9 @@
       opacity: 0.5;
       @include tablets {
       text-align: center;
+    }
+    @include phones {
+      text-align: left; 
     }
     }
   }
@@ -77,6 +93,9 @@
       align-self: center;
       width: 80%;
       margin-bottom: 30px;
+    }
+    @include phones {
+      width: 90%; 
     }
   }
 }

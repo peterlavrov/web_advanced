@@ -12,6 +12,10 @@
 
   &__content {
     display: flex;
+    @include phones {
+      flex-direction: column;
+      padding: 20px 0;
+    }
   }
 
   &-content {
@@ -21,6 +25,9 @@
       @include desktop {
         flex-basis: 25%;
         flex-direction: column;
+      }
+      @include phones {
+        margin-bottom: 30px;
       }
     }
 
@@ -64,7 +71,7 @@
     flex-basis: 66.7%;
 
     @include tablets {
-      flex-basis: 70%; 
+      flex-basis: 70%;
     }
 
     &__about {

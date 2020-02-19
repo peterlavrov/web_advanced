@@ -1,5 +1,8 @@
 .skills {
   display: flex;
+  @include phones {
+    flex-wrap: wrap;    
+  }
 
   &__circle {
     fill: transparent;
@@ -11,6 +14,10 @@
 
   &__item {
     margin-right: 2%;
+    @include phones {
+     margin-right: 0; 
+     flex-basis: 50%;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -21,6 +28,9 @@
     line-height: 48px;
     font-weight: 700;
     color: $text-color;
+    @include phones {
+      text-align: center; 
+    }
   }
 }
 
@@ -32,6 +42,7 @@
   width: 100%;
   height: auto;
   max-width: 180px;
+
   &__title {
     position: absolute;
     top: 50%;

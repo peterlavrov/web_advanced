@@ -11,6 +11,10 @@
     align-items: center;
     padding-top: 59px;
     margin-bottom: 320px;
+
+    @include phones {
+      margin-bottom: 180px; 
+    }
   }
 
   &__menu {
@@ -48,6 +52,9 @@
     @include tablets {
       display: flex;
     }
+    @include phones {
+     right: 70px; 
+    }
   }
 
   .hamburger__inner {
@@ -80,6 +87,9 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 240px;
+    @include phones {
+      margin-bottom: 120px;
+    }
   }
 
   &__scroll {
@@ -99,6 +109,9 @@
   @include tablets {
     flex-direction: column;
   }
+  @include phones {
+     
+    }
   &__description {
     font-size: 18px;
     line-height: 30px;
@@ -106,6 +119,10 @@
     color: $text-color;
     opacity: 0.4;
     margin-bottom: 33px;
+
+    @include phones {
+      font-size: 14px; 
+    }
 
     @include desktop {
       text-align: right;
@@ -123,6 +140,10 @@
   font-size: 72px;
   line-height: 60px;
   font-weight: 800;
+
+  @include phones {
+     font-size: 36px; 
+    }
 }
 
 .scroll {

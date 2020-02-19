@@ -3,13 +3,7 @@ import Vue from "vue";
 
 const sliderTrack = {
   template: "#slider-track",
-  props: ["works", "currentWork", "slidesOnTrack"],
-  methods: {
-    
-  },
-  watch: {
-    
-  }
+  props: ["works", "currentWork", "slidesOnTrack"]
 }
 
 const buttons = {
@@ -64,7 +58,7 @@ new Vue({
       isLast: false,
       slidesOnTrack: 0,
       slidesStart: 0,
-      slidesEnd: 3
+      slidesEnd: 0
     }
   },
   computed: {
@@ -128,10 +122,12 @@ new Vue({
       let windowWidth = window.innerWidth;
       if (windowWidth > 1200) {
         this.slidesOnTrack = 4;
-      } else if (windowWidth <= 1200) {
+      } else if (windowWidth > 768 && windowWidth <= 1200) {
         this.slidesOnTrack = 3;
-      } else if (windowWidth <= 768) {
+      } else if (windowWidth > 480 && windowWidth <= 768) {
         this.slidesOnTrack = 3;
+      } else if (windowWidth <= 480) {
+        this.slidesOnTrack = 0;
       }
     },
     sliderShift(value) {
@@ -152,5 +148,7 @@ new Vue({
     this.works = this.makeArrWithRequiredImages(data);
     window.addEventListener('resize', this.changeSlidesNum);
     this.changeSlidesNum();
+    console.log(this.slidesOnTrack)
+    console.log(window.innerWidth)
   }
 });

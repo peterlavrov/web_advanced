@@ -39,6 +39,10 @@
     @include tablets {
       margin-bottom: 50px;
     }
+    @include phones {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 
   &__info {
@@ -78,6 +82,9 @@
         right: 0;
         transform: translate(50%, -200%);
       }
+      @include phones {
+        display: none;
+      }
     }
 
     &-school {
@@ -97,10 +104,18 @@
     font-weight: 700;
     color: $text-color;
     margin-bottom: 40px;
+    @include phones {
+      margin-bottom: 15px;
+      font-size: 24px;
+      text-align: center;
+    }
   }
 
   &__tags {
     margin-bottom: 50px;
+    @include phones {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -111,6 +126,12 @@
     font-weight: 700;
     color: $text-color;
     margin-bottom: 45px;
+    @include phones {
+      text-align: left;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+  }
   }
 
   &__desc {
@@ -120,6 +141,11 @@
     font-weight: 600;
     color: $text-color;
     margin-bottom: 50px;
+    @include phones {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
   }
 }
 
