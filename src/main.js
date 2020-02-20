@@ -7,3 +7,4 @@ import "./scripts/skills";
 import "./scripts/parallax";
 import "./scripts/work";
 import "./scripts/swiper";
+import "./scripts/popup-menu";
