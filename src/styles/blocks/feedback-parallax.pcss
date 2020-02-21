@@ -18,7 +18,7 @@
     height: 100%;
     will-change: transform;
     @include tablets {
-      display: none;
+      /* display: none; */
     }
 
     &:nth-child(1) {
@@ -33,6 +33,10 @@
       .feedback-parallax__image {
         width: 100%;
         bottom: -200px;
+
+        @include tablets {
+          /* width: 800px; */
+        }
       }
     }
 
@@ -47,6 +51,8 @@
         @include tablets {
           right: -200px;
           width: 50%;
+          top: unset;
+          bottom: 0;
         }
       }
     }

@@ -20,7 +20,7 @@
     will-change: transform;
 
     @include tablets {
-    display: none;
+    /* display: none; */
   }
 
     &:nth-child(1) {
@@ -36,7 +36,8 @@
         right: 0;
         top: 350px;
         @include tablets {
-          top: 450px;
+          top: unset;
+          bottom: 0;
         }
       }
     }
@@ -47,9 +48,11 @@
         left: 50%;
         margin-left: 12%;
         @include tablets {
-          width: 25%;
+          width: 20%;
           height: auto;
-          left: 60%;
+          left: unset;
+          right: 10%;
+          top: 65%;
         }
       }
     }
@@ -75,7 +78,7 @@
         right: 0;
         bottom: 0;
         @include tablets {
-          bottom: 300px;
+          display: none;
         }
       }
     }
@@ -86,7 +89,7 @@
         left: 0;
         width: 100%;
         @include tablets {
-          bottom: 200px;
+          display: none;
         }
       }
     }
