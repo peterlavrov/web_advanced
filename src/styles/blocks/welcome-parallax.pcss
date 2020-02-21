@@ -10,6 +10,7 @@
     position: absolute;
   }
 
+
   &__layer {
     position: absolute;
     top: 0;
@@ -17,6 +18,10 @@
     width: 100%;
     height: 100%;
     will-change: transform;
+
+    @include tablets {
+    display: none;
+  }
 
     &:nth-child(1) {
       .welcome-parallax__image {

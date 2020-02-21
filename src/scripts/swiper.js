@@ -7,20 +7,16 @@ var swiper = new Swiper('.swiper-container', {
   },
   slidesPerView: 2,
   spaceBetween: 0,
-  width: 800,
   grabCursor: true,
   breakpoints: {
-    361: {
-      width: 300,
-      slidesPerView: 1
-    },
     481: {
+      slidesPerView: 1,
     },
     769: {
-      width: 650
+      slidesPerView: 2
     },
     1201: {
-      width: 1000
+      slidesPerView: 2
     }
   }
 });

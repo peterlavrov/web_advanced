@@ -8,18 +8,18 @@
     justify-content: space-evenly;
     align-items: flex-start;
     padding-top: 120px;
-    width: 800px;
+    /* width: 800px; */
     overflow: hidden;
     @include desktop {
-      width: 1000px;
+      /* width: 1000px; */
     }
     @include tablets {
-      width: 87%;
+      /* width: 87%; */
     }
     @include phones {
       padding-top: 40px;
       width: 100%;
-  }
+    }
   }
 
   &__control-panel {
@@ -29,7 +29,7 @@
       flex-direction: column;
       width: 100%;
       margin-bottom: 30px;
-  }
+    }
   }
 
   &-controls {
@@ -86,39 +86,37 @@
       margin-right: 0;
       text-align: center;
       margin-bottom: 25px;
-  }
+    }
   }
 
   &__list {
     display: flex;
-    /* width: 68%; */
-    /* overflow: hidden; */
-    @include desktop {
-      /* width: 85%; */
+    width: 3200px;
+    max-width: 200%;
+    @include tablets {
+    }
+    @include phones {
     }
   }
 
   &__review {
     display: flex;
-    /* width: 100px; */
+    /* width: 400px; */
   }
 }
 
 .review {
   &__content {
     padding-left: 20px;
-    width: 60%;
-    @include tablets {
-      width: 70%; 
-    }
-    @include tablets {
-     width: 90%; 
+    width: 70%;
+    @include phones {
+      width: 460px;
     }
   }
 
   &__quote {
     @include tablets {
-      display: none; 
+      display: none;
     }
   }
 
@@ -174,4 +172,17 @@
   opacity: 0.35;
   cursor: auto;
   pointer-events: none;
+}
+.swiper-container {
+  width: 1000px;
+  overflow: hidden;
+  @include desktop {
+    width: 680px;
+  }
+  @include tablets {
+    width: 100%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }

@@ -5,6 +5,7 @@ const popupMenu = document.querySelector('.hero__popup-menu');
 menuButton.addEventListener('click', event => {
   event.preventDefault();
   popupMenu.style.display = "flex";
+  
 })
 closeButton.addEventListener('click', event => {
   event.preventDefault();
