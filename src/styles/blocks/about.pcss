@@ -8,6 +8,12 @@
     grid-template: "user tale" auto / 45% 55%;
     grid-gap: 0 10px;
     padding-top: 80px;
+    @include phones {
+      grid-template:
+        "user" auto
+        "tale" auto / 100% 100%;
+      margin: 0 30px;
+    }
   }
 
   &__user {
@@ -40,6 +46,9 @@
         font-weight: 600;
         color: $text-color;
         width: 35%;
+        @include phones {
+          width: 50%;
+        }
       }
 
       &-data {
@@ -47,6 +56,9 @@
         font-weight: 600;
         color: $text-color;
         width: 65%;
+        @include phones {
+          width: 50%;
+        }
       }
     }
 
@@ -55,12 +67,26 @@
       justify-content: center;
       width: 60%;
       margin-bottom: 80px;
+
+      @include tablets {
+        width: 80%;
+        justify-content: flex-start;
+      }
+      @include phones {
+        width: 100%;
+        margin-bottom: 30px;
+        justify-content: center;
+      }
     }
 
     &__data {
       width: 60%;
       @include desktop {
         width: 85%;
+      }
+      @include phones {
+        width: 100%;
+        margin-bottom: 40px;
       }
     }
   }
@@ -79,6 +105,13 @@
       @include desktop {
         width: 85%;
       }
+      @include tablets {
+        width: 100%;
+        margin-bottom: 73px;
+      }
+      @include phones {
+        margin-bottom: 40px;
+      }
     }
 
     &__welcome {
@@ -94,6 +127,9 @@
       font-weight: 700;
       color: $text-color;
       margin-bottom: 30px;
+      @include phones {
+        font-size: 30px;
+    }
     }
 
     &__desc {
@@ -102,6 +138,9 @@
       line-height: 30px;
       font-weight: 600;
       color: $text-color;
+      @include phones {
+        width: 85%;
+    }
     }
 
     &__ps {
@@ -111,6 +150,13 @@
       @include desktop {
         width: 85%;
       }
+
+      @include tablets {
+        width: 100%;
+      }
+      @include phones {
+        width: 85%;
+    }
     }
 
     &__paragraph {
@@ -135,65 +181,5 @@
         color: $ps-color;
       }
     }
-    /* &-data {
-      width: 26%;
-      margin-right: 30px;
-    }
-
-    &-text {
-      position: relative;
-      width: 67%;
-
-      &:before {
-        display: block;
-        content: "*";
-        position: absolute;
-        left: -12%;
-        top: 10px;
-        opacity: 0.1;
-        font-size: 48px;
-        line-height: 30px;
-        font-weight: 400;
-        font-style: italic;
-        color: $ps-color;
-      }
-    }
-
-    &-row {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    &-title {
-      min-width: 40%;
-      opacity: 0.3;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 600;
-      color: $text-color;
-    }
-
-    &-info {
-      text-align: left;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 600;
-      color: $text-color;
-    }
-
-    &-ps {
-      opacity: 0.5;
-      font-size: 16px;
-      line-height: 30px;
-      font-weight: 400;
-      font-style: italic;
-      color: $text-color;
-      width: 54%;
-    } */
   }
 }

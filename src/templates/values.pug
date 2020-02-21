@@ -5,25 +5,8 @@ section.values
         .values__profit.values-profit
           .values-profit__title Чем я могу быть полезен вам
           p.values-profit__info Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .values__skills-graphic
-          - 
-            var items = [
-              ["Front-end", ["Html5", "CSS3", "javaScript", "jQuery и Vue.js"]],
-              ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
-            ];
-          ul.skills-graphic
-            each row in items
-              li.skills-graphic__item
-                .skills-graphic__row.skills-row
-                  .skills-row__title #{row[0]}
-                  .skills-row__skills
-                    ul.skills
-                      each skill in row[1]
-                        li.skills__item
-                          .skill
-                            svg.skills__circle(viewBox="0 0 200 200" preserveAspectRatio="none")
-                              linearGradient(id="gradient")
-                                stop(offset="0%" stop-color="#9300e8")
-                                stop(offset="100%" stop-color="#4a00ed")
-                              circle(cx="100" cy="100" r="75")
-                            .skill__title #{skill}
+        #skills-component
+        +image("content/backpack.png", "values__backpack", "")
+
+          
+        

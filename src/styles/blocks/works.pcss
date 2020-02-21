@@ -21,6 +21,11 @@
       grid-template: "slider info" auto / 55% 45%;
       align-items: start;
     }
+    @include tablets {
+      grid-template:
+        "slider" auto
+        "info" auto / 95% 95%;
+    }
   }
 
   &__slider {
@@ -30,6 +35,13 @@
     @include desktop {
       width: 90%;
       grid-area: slider;
+    }
+    @include tablets {
+      margin-bottom: 50px;
+    }
+    @include phones {
+      width: 100%;
+      margin-bottom: 30px;
     }
   }
 
@@ -44,11 +56,14 @@
       grid-area: info;
       width: unset;
     }
+    @include tablets {
+      margin-left: 0;
+      align-items: center;
+    }
 
-    &:before {
+    &-index {
       display: block;
       position: absolute;
-      content: "4";
       font-size: 400px;
       font-weight: 800;
       color: $creamy;
@@ -57,17 +72,28 @@
       transform: translateX(-100%);
       z-index: -5;
       @include desktop {
-        content: "2";
         font-size: 300px;
         font-weight: 800;
         color: creamy;
         line-height: 210px;
+      }
+      @include tablets {
+        left: unset;
+        right: 0;
+        transform: translate(50%, -200%);
+      }
+      @include phones {
+        display: none;
       }
     }
 
     &-school {
       @include desktop {
         width: 78%;
+      }
+      @include tablets {
+        width: 65%;
+        text-align: center;
       }
     }
   }
@@ -78,10 +104,18 @@
     font-weight: 700;
     color: $text-color;
     margin-bottom: 40px;
+    @include phones {
+      margin-bottom: 15px;
+      font-size: 24px;
+      text-align: center;
+    }
   }
 
   &__tags {
     margin-bottom: 50px;
+    @include phones {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -92,6 +126,12 @@
     font-weight: 700;
     color: $text-color;
     margin-bottom: 45px;
+    @include phones {
+      text-align: left;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+  }
   }
 
   &__desc {
@@ -101,6 +141,11 @@
     font-weight: 600;
     color: $text-color;
     margin-bottom: 50px;
+    @include phones {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
   }
 }
 
@@ -119,8 +164,6 @@
     &:last-child {
       margin-right: 0;
     }
-
-    
   }
 }
 
@@ -129,6 +172,7 @@
   line-height: 48px;
   font-weight: 700;
   color: $blue;
+  text-decoration: unset;
 
   &:hover {
     text-decoration: underline;

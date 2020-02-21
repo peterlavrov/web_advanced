@@ -11,7 +11,6 @@
     width: 20%;
     height: auto;
     box-shadow: -10px -10px 30px $black;
-    overflow: hidden;
     @include desktop {
       width: 28%;
     }
@@ -29,15 +28,15 @@
     &__item {
       height: auto;
       width: auto;
-      overflow: hidden;
 
       &:last-child {
-      @include desktop {
-        display: none;
-      }
+        @include desktop {
+          /* display: none; */
+        }
       }
       &--active {
         outline: 3px solid $orange;
+        z-index: 10;
       }
     }
   }
@@ -47,6 +46,9 @@
   display: flex;
   position: absolute;
   right: 0;
+  @include phones {
+    bottom: 0; 
+  }
 
   &__button {
     display: flex;
@@ -58,6 +60,10 @@
 
     &--inactive svg {
       opacity: 0.3;
+    }
+    &--inactive {
+      cursor: auto;
+      pointer-events: none;
     }
   }
 

@@ -1,0 +1,50 @@
+.hero__popup-menu {
+  display: none;
+  position: fixed;
+  @include tablets {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    min-height: 650px;
+    width: 40%;
+    background-color: $white;
+    top: 0;
+    right: 0;
+    z-index: 20;
+  }
+  @include phones {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.popup-menu__close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 60px;
+  right: 20px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    left: 0;
+    background-color: $text-color;
+    transform: translateX(200%) rotate(45deg);
+  }
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    right: 0;
+    background-color: $text-color;
+    transform: translateX(-200%) rotate(-45deg);
+  }
+
+}

@@ -1,7 +1,7 @@
 .values {
   min-height: 650px;
-  background: url("/src/images/content/backpack.png") left center no-repeat;
-  background-size: auto 65%;
+  /* background: url("/src/images/content/backpack.png") left center no-repeat;
+  background-size: auto 65%; */
 
   @include desktop {
     background-size: auto 60%;
@@ -15,6 +15,28 @@
     justify-content: center;
     align-items: center;
     padding: 70px 0;
+    @include phones {
+      padding: 30px 0;
+    }
+  }
+
+  &__backpack {
+    position: absolute;
+    height: 65%;
+    width: auto;
+    left: 0;
+    @include desktop {
+      height: 55%;
+      left: -150px;
+    }
+    @include tablets {
+      position: relative;
+      left: unset;
+      height: 300px;
+    }
+    @include phones {
+      height: 200px; 
+    }
   }
 
   &-profit {
@@ -24,12 +46,25 @@
     @include desktop {
       width: 50%;
     }
+    @include tablets {
+     width: 60%; 
+    }
+    @include phones {
+      width: 80%;
+    }
     &__title {
       font-size: 30px;
       line-height: 36px;
       font-weight: 700;
       color: $text-color;
       margin-bottom: 60px;
+      @include tablets {
+      text-align: center;
+    }
+    @include phones {
+     text-align: left; 
+     font-size: 24px;
+    }
     }
 
     &__info {
@@ -38,6 +73,12 @@
       font-weight: 600;
       color: $text-color;
       opacity: 0.5;
+      @include tablets {
+      text-align: center;
+    }
+    @include phones {
+      text-align: left; 
+    }
     }
   }
 
@@ -47,6 +88,14 @@
 
     @include desktop {
       width: 63%;
+    }
+    @include tablets {
+      align-self: center;
+      width: 80%;
+      margin-bottom: 30px;
+    }
+    @include phones {
+      width: 90%; 
     }
   }
 }

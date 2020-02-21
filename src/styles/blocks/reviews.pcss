@@ -8,15 +8,33 @@
     justify-content: space-evenly;
     align-items: flex-start;
     padding-top: 120px;
+    width: 800px;
+    overflow: hidden;
+    @include desktop {
+      width: 1000px;
+    }
+    @include tablets {
+      width: 87%;
+    }
+    @include phones {
+      padding-top: 40px;
+      width: 100%;
+  }
   }
 
   &__control-panel {
     display: flex;
     margin-bottom: 80px;
+    @include phones {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 30px;
+  }
   }
 
   &-controls {
     display: flex;
+    justify-content: center;
 
     &__prev {
       display: flex;
@@ -63,25 +81,45 @@
     font-weight: 700;
     color: $text-color;
     margin-right: 122px;
+    @include phones {
+      font-size: 24px;
+      margin-right: 0;
+      text-align: center;
+      margin-bottom: 25px;
+  }
   }
 
   &__list {
     display: flex;
-    width: 68%;
+    /* width: 68%; */
+    /* overflow: hidden; */
     @include desktop {
-    width: 85%;
-  }
+      /* width: 85%; */
+    }
   }
 
   &__review {
     display: flex;
+    /* width: 100px; */
   }
 }
 
 .review {
   &__content {
     padding-left: 20px;
-    width: 70%;
+    width: 60%;
+    @include tablets {
+      width: 70%; 
+    }
+    @include tablets {
+     width: 90%; 
+    }
+  }
+
+  &__quote {
+    @include tablets {
+      display: none; 
+    }
   }
 
   &__pic {
@@ -131,4 +169,9 @@
       color: $text-color;
     }
   }
+}
+.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
 }

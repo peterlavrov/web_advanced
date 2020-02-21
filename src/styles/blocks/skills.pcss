@@ -1,18 +1,23 @@
 .skills {
   display: flex;
+  @include phones {
+    flex-wrap: wrap;    
+  }
 
   &__circle {
-    stroke: url(#gradient);
-    stroke-width: 20;
     fill: transparent;
     width: 100%;
     height: 100%;
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 180px;
+    max-width: 180px;
   }
 
   &__item {
     margin-right: 2%;
+    @include phones {
+     margin-right: 0; 
+     flex-basis: 50%;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -23,6 +28,9 @@
     line-height: 48px;
     font-weight: 700;
     color: $text-color;
+    @include phones {
+      text-align: center; 
+    }
   }
 }
 
@@ -33,6 +41,8 @@
   position: relative;
   width: 100%;
   height: auto;
+  max-width: 180px;
+
   &__title {
     position: absolute;
     top: 50%;
@@ -43,5 +53,19 @@
     font-weight: 700;
     color: $text-color;
     text-align: center;
+  }
+}
+
+.circle {
+  &__above {
+    stroke: url(#gradient);
+    stroke-width: 20;
+    stroke-dashoffset: 160px;
+    stroke-dasharray: 471px;
+  }
+
+  &__under {
+    stroke: $creamy;
+    stroke-width: 8;
   }
 }

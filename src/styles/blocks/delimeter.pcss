@@ -7,5 +7,12 @@
     height: 100px;
     width: 50%;
     fill: currentColor;
+    z-index: 5;
+  @include tablets {
+      height: 50px;
+    }
+    @include phones {
+     height: 30px;
+    }
   }
 }
